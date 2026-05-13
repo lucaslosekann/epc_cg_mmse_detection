@@ -11,16 +11,21 @@ typedef struct {
 } Matrix;
 
 Matrix *create_matrix(int rows, int cols);
+Matrix *create_identity_matrix(int size);
 Matrix *load_from_csv(const char *filename);
 void free_matrix(Matrix *matrix);
+Matrix *matrix_add(const Matrix *a, const Matrix *b);
 Matrix *matrix_mul(const Matrix *a, const Matrix *b);
+Matrix *matrix_scalar_mul(const Matrix *matrix, complex double scalar);
 void print_matrix(const Matrix *matrix);
 
 Matrix *matrix_dot(const Matrix *a, const Matrix *b);
-Matrix *matrix_transpose(const Matrix *matrix);
+Matrix *matrix_transpose_conjugate(const Matrix *matrix);
+
+Matrix *matrix_copy(const Matrix *matrix);
 
 // matvec
 
-Matrix *matrix_vector_mul(const Matrix *matrix, const Vector *vector);
+Vector *matrix_vector_mul(const Matrix *matrix, const Vector *vector);
 
 #endif // MATRIX_H

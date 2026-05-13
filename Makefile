@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -Iinclude
-SRC = src/main.c src/matrix.c src/vector.c
+CFLAGS = -Wall -Iinclude -lm
+SRC = src/main.c src/matrix.c src/vector.c src/cg.c
 OUT = out
 OBJ = $(patsubst src/%.c,$(OUT)/%.o,$(SRC))
 TARGET = main
