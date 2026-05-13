@@ -6,6 +6,9 @@ Vector *create_vector(int size) {
     Vector *vector = (Vector *)malloc(sizeof(Vector));
     vector->size = size;
     vector->data = (complex double *)malloc(size * sizeof(complex double));
+    for (int i = 0; i < size; i++) {
+        vector->data[i] = 0 + 0 * I;
+    }
     return vector;
 }
 

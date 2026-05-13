@@ -8,6 +8,9 @@ Matrix *create_matrix(int rows, int cols) {
     matrix->rows = rows;
     matrix->cols = cols;
     matrix->data = (complex double *)malloc(rows * cols * sizeof(complex double));
+    for (int i = 0; i < rows * cols; i++) {
+        matrix->data[i] = 0 + 0 * I;
+    }
     return matrix;
 }
 
