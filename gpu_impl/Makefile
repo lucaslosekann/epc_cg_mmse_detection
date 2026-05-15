@@ -1,6 +1,6 @@
 CC = nvcc
-CFLAGS = -Iinclude -lm
-SRC = src/main.cu src/matrix.cu src/vector.cu
+CFLAGS = -Iinclude -lm -arch=native
+SRC = src/main.cu src/matrix.cu src/vector.cu src/cg.cu
 OUT = out
 OBJ = $(patsubst src/%.c,$(OUT)/%.o,$(SRC))
 TARGET = main

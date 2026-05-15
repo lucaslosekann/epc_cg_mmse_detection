@@ -1,4 +1,5 @@
 #include "vector.h"
+#include <complex.h>
 #include <cuda_runtime_api.h>
 #include <memory.h>
 #include <stdio.h>
@@ -23,8 +24,10 @@ void free_vector(Vector *vector) {
 }
 
 void print_vector(const Vector *vector) {
+    // cuDoubleComplex *host_data = (cuDoubleComplex *)malloc(vector->size * sizeof(cuDoubleComplex));
+    // cudaMemcpy(host_data, vector->data, vector->size * sizeof(cuDoubleComplex), cudaMemcpyDeviceToHost);
     for (int i = 0; i < vector->size; i++) {
-        printf("%lf + %lfi\n", vector->data[i].x, vector->data[i].y);
+        printf("%lf + %lfi\n", cuCreal(vector->data[i]), cuCimag(vector->data[i]));
     }
 }
 

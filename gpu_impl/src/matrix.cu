@@ -29,7 +29,7 @@ Matrix *create_identity_matrix(int size) {
 
 void free_matrix(Matrix *matrix) {
     if (matrix) {
-        free(matrix->data);
+        cudaFree(matrix->data);
         free(matrix);
     }
 }
